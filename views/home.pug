@@ -1,0 +1,34 @@
+extends ./header.pug
+append content
+    .container
+      .row
+        .col-lg-3
+          h1.my-4 Nos chaises
+          .list-group
+            p Nos chaises sont d&apos;une qualit&eacute; in&eacute;galable.
+            p Design, classique, fantaisie, il y en a pour tous les gouts!
+          //
+            <div class="list-group">
+            <a href="#" class="list-group-item">Category 1</a>
+            <a href="#" class="list-group-item">Category 2</a>
+            <a href="#" class="list-group-item">Category 3</a>
+            </div>
+        // /
+        if chaises
+            .col-lg-9
+                .row
+                    each chaise in chaises
+                        .col-lg-4.col-md-6.mb-4
+                          .card.h-100
+                            a(href='#')
+                              img.card-img-top(src='https://www.drawer.fr/29058-thickbox_default/lot-de-2-chaises-wiseman.jpg' alt='')
+                            .card-body
+                              h4.card-title
+                                a(href='#')=chaise.name
+                              h5=chaise.price
+                              p.card-text=chaise.description
+                            .card-footer
+                              small.text-muted=chaise.grade
+    footer.py-5.bg-dark
+      .container
+        p.m-0.text-center.text-white 2020 Copyright &copy; Groupe 11 Cloud ESGI
