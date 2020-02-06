@@ -1,4 +1,16 @@
-var router = require('express').Router();
+var router     = require('express').Router();
+const AWS      = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB.DocumentClient({region: "eu-west-3", credentials: AWS.config.credentials});
+
+dynamodb.get({
+    TableName: 'Product',
+}, (err, data) => {
+    if (!err) {
+        console.log(data); //TODO: test/format and put it in chaises var
+    } else {
+        console.log(err);
+    }
+});
 
 // tmp mock
 let chaises = {
