@@ -14,21 +14,21 @@ append content
             <a href="#" class="list-group-item">Category 3</a>
             </div>
         // /
-        if chaises
+        if products
             .col-lg-9
                 .row
-                    each chaise in chaises
+                    each product in products
                         .col-lg-4.col-md-6.mb-4
                           .card.h-100
                             a(href='#')
                               img.card-img-top(src='https://www.drawer.fr/29058-thickbox_default/lot-de-2-chaises-wiseman.jpg' alt='')
                             .card-body
                               h4.card-title
-                                a(href='#')=chaise.name
-                              h5=chaise.price
-                              p.card-text=chaise.description
+                                a(href='#')=product.Name
+                              h5=product.Price
+                              p.card-text=product.Description
                             .card-footer
-                              small.text-muted=chaise.grade
+                              small.text-muted=product.Quantity+' en stock'
     footer.py-5.bg-dark
       .container
         p.m-0.text-center.text-white 2020 Copyright &copy; Groupe 11 Cloud ESGI
