@@ -1,7 +1,7 @@
 let router     = require('express').Router();
 let http = require('http');
 const AWS      = require('aws-sdk');
-const dynamodb = new AWS.DynamoDB.DocumentClient({region: "eu-west-3", credentials: credentials});
+const dynamodb = new AWS.DynamoDB.DocumentClient({region: "eu-west-3", credentials: AWS.config.credentials});
 
 let products;
 let productsFromApi;
